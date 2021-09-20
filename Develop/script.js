@@ -26,9 +26,6 @@ function converAMPMTo24h(time) {
 function handleSaveByEnter(event) {
     if (event.keyCode === 13) { //if pressed Enter
         event.preventDefault(); //prevent new line
-        //
-        // I want to change focus to the next line but not sure how //
-        // 
         handleSave(event);
     } else if( //any printable change or space/backspace/delete
         (event.keyCode > 47 && event.keyCode < 58)   || // number keys
@@ -63,7 +60,7 @@ function handleSave(event) {
 function renderTablePerRowByTime(timeText, taskText) {
     var taskRow = $('<div class="row">');
     var taskTime = $('<div class="time col-2 table-bordered bg-light d-flex align-items-center justify-content-center">');
-    var taskContent = $('<textarea class="content col-9 row-auto table-bordered" placeholder="Enter your task here">');
+    var taskContent = $('<textarea class="content col-9 row-auto table-bordered" placeholder="Enter your task here">'); //test out input; 
     var taskSaveBtn = $('<button class="save-btn col-1 btn btn-secondary d-flex align-items-center justify-content-center fas fa-check">');
     var displayTimeText = conver24hToAMPM(timeText);
     taskTime.text(displayTimeText);
